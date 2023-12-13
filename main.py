@@ -11,7 +11,7 @@ def main(suburl : str):
     suburl = "_".join(suburl)
 
     # Setting the search
-    base_url = "https://fr.wikipedia.org/wiki/"
+    base_url = "https://en.wikipedia.org/wiki/"
     url = base_url + suburl
 
     # Verifying errors > the url + response
@@ -20,13 +20,12 @@ def main(suburl : str):
         print(f"Erreur : {response.status_code}")
 
     # Getting the data 
-    soup = BeautifulSoup(response.text, "html.parser")
+    soup = BeautifulSoup(response.text, "html.parser", from_encoding="utf-8")
 
     h3 = list()
     for title in soup.find_all("p"):
         h3.append(title.text)
     
-
     return h3
 
 # Execute function

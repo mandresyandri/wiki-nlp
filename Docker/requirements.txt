@@ -1,3 +1,8 @@
+# Basic datascraping
 beautifulsoup4==4.12.2
 pandas==2.1.3
 requests==2.31.0
+
+# LSTM model 
+transformers==2.2.0
+bert-extractive-summarizer==0.10.1

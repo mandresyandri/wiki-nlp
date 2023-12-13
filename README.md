@@ -1,7 +1,4 @@
-# py-scrapper
+# WIKI NLP 
 
-> Simple wikipedia scrapper ++ summarizer > LSTM
+> Application that return personnality summary from wikipedia pages. 
 
-```Docker
-docker exec -it container-name sh
-```
