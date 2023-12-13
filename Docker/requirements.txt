@@ -3,6 +3,11 @@ beautifulsoup4==4.12.2
 pandas==2.1.3
 requests==2.31.0
 
+# DL library
+tensorflow==2.15.0
+tensorflow-io==0.30.0
+torch==2.1.1
+
 # LSTM model 
 transformers==2.2.0
 bert-extractive-summarizer==0.10.1

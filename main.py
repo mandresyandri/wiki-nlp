@@ -2,6 +2,8 @@
 import requests
 from bs4 import BeautifulSoup
 import pandas as ps
+from data_clean import regex_clean
+from model import bert_summarizer
 
 # Base function
 def main(suburl : str):
@@ -20,13 +22,13 @@ def main(suburl : str):
         print(f"Erreur : {response.status_code}")
 
     # Getting the data 
-    soup = BeautifulSoup(response.text, "html.parser", from_encoding="utf-8")
+    soup = BeautifulSoup(response.text, "html.parser")
 
-    h3 = list()
+    text_content = list()
     for title in soup.find_all("p"):
-        h3.append(title.text)
+        text_content.append(title.text)
     
-    return h3
+    return bert_summarizer(regex_clean(text_content[:3]))
 
 # Execute function
 if __name__ == "__main__":
